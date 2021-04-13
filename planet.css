@@ -42,7 +42,6 @@ header {
     color: #66A182 !important;
     background-color: white;
 }
-.navbar a:hover:last-child
 .navbar a:visited {
     color:#4A8FE7;
 }
@@ -109,6 +108,7 @@ header {
 /*styling first pars*/
 .a1, .r1 {
     padding-top: 2%;
+    padding-right: 60%;
 }
 .about-par, .how-par {
     padding-right: 65%;
