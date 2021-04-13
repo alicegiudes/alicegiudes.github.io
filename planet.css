@@ -241,13 +241,24 @@ header {
     height: 400px;
     padding-top: 1%;
 }
+@media screen and (max-width: 800px) {
+    .banners-end {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 1%;
+        margin-left: 32%;
+        margin-right: 32%;
+        padding-top: 1%;
+    }
+}
 #deforestation-end, #water-pollution-end, #air-pollution-end, #plastic-pollution-end, #species-extinction-end, #water-deplition-end {
     background-color: #F6AE2D;
     padding: 1.4%;
     border-radius: 10px;
     font-size: 18px;
     margin-left: 0.2%;
-    margin-top: 6%;
+    margin-top: 12%;
     color: black;
     border: 1px solid black;
     box-shadow: 1px 1px 0 black;
@@ -260,7 +271,7 @@ header {
     border-radius: 10px;
     font-size: 18px;
     margin-left: 0.4%;
-    margin-top: 6%;
+    margin-top: 12%;
     color: black;
     border: 1px solid black;
     box-shadow: 1px 1px 0 black;
