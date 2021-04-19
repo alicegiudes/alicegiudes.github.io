@@ -1,3 +1,5 @@
+//initializing variables 
+//global variables because they are used in multiple functions 
 var JSONdefVal = JSON.stringify(70);
 var JSONco2Val = JSON.stringify(75);
 var JSONairVal = JSON.stringify(80);
@@ -23,9 +25,11 @@ var JSONspeciesVal4;
 var JSONwaterVal4;
 var JSONplasticVal4;
 
+//going back to home page
 function backHome() {
     window.open("index.html", "_self");
 }
+//going back to start of the game
 function playAgain() {
     window.open("game1-2.html", "_self");
     document.getElementById('def-val').innerHTML = JSONdefVal;
@@ -35,6 +39,7 @@ function playAgain() {
     document.getElementById('water-val').innerHTML = JSONwaterVal;
     document.getElementById('plastic-val').innerHTML = JSONplasticVal;
 }
+//loading initial values
 function loadVal() {
     document.getElementById('def-val').innerHTML = JSONdefVal;
     document.getElementById('air-val').innerHTML = JSONairVal;
@@ -43,6 +48,7 @@ function loadVal() {
     document.getElementById('water-val').innerHTML = JSONwaterVal;
     document.getElementById('plastic-val').innerHTML = JSONplasticVal;
 }
+//loading values after first choice
 function valUpdated1() {
     document.getElementById('def-val').innerHTML = sessionStorage.getItem("defvalue1");
     document.getElementById('air-val').innerHTML = sessionStorage.getItem("airvalue1");
@@ -51,6 +57,7 @@ function valUpdated1() {
     document.getElementById('water-val').innerHTML = sessionStorage.getItem("watervalue1");
     document.getElementById('plastic-val').innerHTML = sessionStorage.getItem("plasticvalue1");
 }
+//loading values after second choice
 function valUpdated2() {
     document.getElementById('def-val').innerHTML = sessionStorage.getItem("defvalue2");
     document.getElementById('air-val').innerHTML = sessionStorage.getItem("airvalue2");
@@ -59,6 +66,7 @@ function valUpdated2() {
     document.getElementById('water-val').innerHTML = sessionStorage.getItem("watervalue2");
     document.getElementById('plastic-val').innerHTML = sessionStorage.getItem("plasticvalue2");
 }
+//loading values after third choice
 function valUpdated3() {
     document.getElementById('def-val').innerHTML = sessionStorage.getItem("defvalue3");
     document.getElementById('air-val').innerHTML = sessionStorage.getItem("airvalue3");
@@ -67,6 +75,7 @@ function valUpdated3() {
     document.getElementById('water-val').innerHTML = sessionStorage.getItem("watervalue3");
     document.getElementById('plastic-val').innerHTML = sessionStorage.getItem("plasticvalue3");
 }
+//loading values after fourth choice and giving result
 function valUpdated4() {
     document.getElementById('def-val').innerHTML = sessionStorage.getItem("defvalue4");
     document.getElementById('air-val').innerHTML = sessionStorage.getItem("airvalue4");
@@ -86,6 +95,7 @@ function valUpdated4() {
         document.getElementById('game-results').innerHTML = "Though luck! You improved some indicators, but you could've done better. Try again next time!";
     }
 }
+//following functions are all to determine the changes in the values based on the action taken 
 function value1or2() {
     if (document.getElementById('choice1').checked == true) {
         JSONdefVal -= 10;
@@ -98,6 +108,7 @@ function value1or2() {
         document.getElementById('species-val').innerHTML = JSONspeciesVal;
         JSONwaterVal -= 5;
         document.getElementById('water-val').innerHTML = JSONwaterVal;
+        //opens next set of actions based on selected action
         window.open("game3-4.html", "_self");
     } else if (document.getElementById('choice2').checked == true) {
         JSONairVal -= 10;
@@ -106,6 +117,7 @@ function value1or2() {
         document.getElementById('co2-val').innerHTML = JSONco2Val;
         window.open("game4-5.html", "_self");
     }
+    //saving values in sessionStorage to retrieve later 
     sessionStorage.setItem("defvalue1", JSONdefVal);
     sessionStorage.setItem("co2value1", JSONco2Val);
     sessionStorage.setItem("airvalue1", JSONairVal);
@@ -114,6 +126,7 @@ function value1or2() {
     sessionStorage.setItem("plasticvalue1", JSONplasticVal);
 }
 function value3or4() {
+    //retrieving values from sessionStorage to modify 
     JSONdefVal2 = sessionStorage.getItem("defvalue1");
     JSONairVal2 = sessionStorage.getItem("airvalue1");
     JSONco2Val2 = sessionStorage.getItem("co2value1");
